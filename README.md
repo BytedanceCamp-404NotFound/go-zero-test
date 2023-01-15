@@ -4,6 +4,7 @@
 
 启动go-zero
 ```shell
+cd greet
 go run greet.go -f etc/greet-api.yaml
 ```
 测试go-zero
