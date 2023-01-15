@@ -35,6 +35,10 @@ curl -i -X GET http://localhost:8888/from/you
 http://[自己IP地址]:8080/from/you
 
 
+# 未来计划
+
+增加Action自动化构建
+
 # 参考资料
 
 https://go-zero.dev/cn/docs/quick-start/monolithic-service
