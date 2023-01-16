@@ -25,6 +25,8 @@ func NewFeedLogic(ctx context.Context, svcCtx *svc.ServiceContext) *FeedLogic {
 
 func (l *FeedLogic) Feed(req *types.FeedHandlerRequest) (resp *types.FeedHandlerResponse, err error) {
 	// todo: add your logic here and delete this line
-
-	return
+	return &types.FeedHandlerResponse{
+		StatusCode : 400,
+		StatusMsg : "hello",
+	},nil
 }

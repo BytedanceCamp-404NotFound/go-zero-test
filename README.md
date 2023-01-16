@@ -25,7 +25,7 @@ goctl api go -api greet.api -dir . -style gozero
 ### 启动go-zero
 ```shell
 cd greet
-go run greet.go -f etc/greet-api.yaml
+go run greet.go -f etc/Greet-Api.yaml
 ```
 ### 测试go-zero
 ```shell
@@ -44,29 +44,51 @@ sudo apt install mysql-server -y
 检查安装的是否正确
 sudo systemctl status mysql.service
 
-# 未来计划
+# 未来计划以及已完成
 
-+ [X] vscode可以F5一键编译和调试
++ [ ] vscode可以F5一键编译和调试
 + [X] 增加Action的CI检测
 
 
 # commit类型
 
 用于说明 commit 的类别，只允许使用下面7个标识。
-feat：新功能（feature）
-fix/to：修补bug
-  - fix：产生 diff 并自动修复此问题。适合于一次提交直接修复问题
-  - to：只产生 diff不 自动修复此问题。适合于多次提交。最终修复问题提交时使用 fix
-docs：仅仅修改了文档（documentation）
-style： 仅仅修改了空格、格式缩进、逗号等等，不改变代码逻辑
-refactor：代码重构，没有加新功能或者修复 bug（即不是新增功能，也不是修改bug的代码变动）
-test：增加测试
-chore：改变构建流程、或者增加依赖库、工具等
-revert：回滚到上一个版本
-merge：代码合并
-sync：同步主线或分支的Bug
+feat：新功能（feature）</br>
+fix/to：修补bug </br>
+  - fix：产生 diff 并自动修复此问题。适合于一次提交直接修复问题 </br>
+  - to：只产生 diff不 自动修复此问题。适合于多次提交。最终修复问题提交时使用 fix </br>
+docs：仅仅修改了文档（documentation） </br>
+style： 仅仅修改了空格、格式缩进、逗号等等，不改变代码逻辑 </br>
+refactor：代码重构，没有加新功能或者修复 bug（即不是新增功能，也不是修改bug的代码变动） </br>
+test：增加测试 </br>
+chore：改变构建流程、或者增加依赖库、工具等 </br>
+revert：回滚到上一个版本 </br>
+merge：代码合并 </br>
+sync：同步主线或分支的Bug </br>
 
 
+# vscode 写go代码，没法转跳函数
+
+ctrl + shift + p 
+Go:Install/Update Tools
+全选
+OK
+
+setting
+ "go.toolsEnvVars": {
+        "GOFLAGS": "-mod=vendor"
+}
+
+
+ctrl + shift + p 
+reload
+
+Go: Use Language Serve
+
+
+/usr/local/bin/  # 放可执行文件的位置
+
+go-outline之类的，放在/usr/local/bin/下面，就可以转跳了
 # 参考资料
 
 https://go-zero.dev/cn/docs/quick-start/monolithic-service
