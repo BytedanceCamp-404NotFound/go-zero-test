@@ -37,7 +37,7 @@ http://[自己IP地址]:8080/from/you
 
 # 未来计划
 
-增加Action自动化构建
++ [X] 增加Action自动化构建
 
 # 参考资料
 
