@@ -9,16 +9,16 @@ import (
 	"go-zero-demo/greet/internal/types"
 )
 
-func DouyinFeedHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
+func FeedHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		var req types.Request
+		var req types.FeedHandlerRequest
 		if err := httpx.Parse(r, &req); err != nil {
 			httpx.ErrorCtx(r.Context(), w, err)
 			return
 		}
 
-		l := logic.NewDouyinFeedLogic(r.Context(), svcCtx)
-		resp, err := l.DouyinFeed(&req)
+		l := logic.NewFeedLogic(r.Context(), svcCtx)
+		resp, err := l.Feed(&req)
 		if err != nil {
 			httpx.ErrorCtx(r.Context(), w, err)
 		} else {

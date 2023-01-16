@@ -9,23 +9,22 @@ import (
 	"github.com/zeromicro/go-zero/core/logx"
 )
 
-type GreetLogic struct {
+type FeedLogic struct {
 	logx.Logger
 	ctx    context.Context
 	svcCtx *svc.ServiceContext
 }
 
-func NewGreetLogic(ctx context.Context, svcCtx *svc.ServiceContext) *GreetLogic {
-	return &GreetLogic{
+func NewFeedLogic(ctx context.Context, svcCtx *svc.ServiceContext) *FeedLogic {
+	return &FeedLogic{
 		Logger: logx.WithContext(ctx),
 		ctx:    ctx,
 		svcCtx: svcCtx,
 	}
 }
 
-func (l *GreetLogic) Greet(req *types.Request) (resp *types.Response, err error) {
+func (l *FeedLogic) Feed(req *types.FeedHandlerRequest) (resp *types.FeedHandlerResponse, err error) {
 	// todo: add your logic here and delete this line
-	resp = new(types.Response)
-	resp.Message = "Hello world"
+
 	return
 }

@@ -14,13 +14,13 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 		[]rest.Route{
 			{
 				Method:  http.MethodGet,
-				Path:    "/from/:name",
-				Handler: GreetHandler(serverCtx),
+				Path:    "/douyin/feed",
+				Handler: FeedHandler(serverCtx),
 			},
 			{
-				Method:  http.MethodGet,
-				Path:    "/douyin/:feed",
-				Handler: DouyinFeedHandler(serverCtx),
+				Method:  http.MethodPost,
+				Path:    "/douyin/feed/register",
+				Handler: UserRegisterHandler(serverCtx),
 			},
 		},
 	)
