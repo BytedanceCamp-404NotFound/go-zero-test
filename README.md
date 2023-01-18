@@ -20,7 +20,7 @@ go mod tidy
 ```
 
 ### 修改API
-goctl api go -api greet.api -dir . -style gozero
+goctl api go -api greet.api -dir . -style GoZero
 
 ### 启动go-zero
 ```shell
